@@ -1,0 +1,81 @@
+<%- include("../partials/defaultPartials/header") %>
+<%- include("../partials/defaultPartials/navbar") %>
+<style>
+    .quotes-text {
+      color: white;
+      font-size: 25px;
+      font-family: cursive;
+    }
+    .quotes-verse {
+      color: white;
+      font-size: 18px;
+      font-family: cursive;
+    }
+  </style>
+<!-- Breadcrumbs-->
+<section class="breadcrumbs-custom bg-image context-dark" style="background-image: url('/images/single_musics.jpg'); background-position: center 18%;">
+    <div class="container">
+        <div class="page-quotes">
+          <% verse.forEach(quote => { %>
+            <% if (quote) { %>
+              <p class="quotes-text"><%= quote.text %> </p>
+              <span class="quotes-verse"><%= quote.verse %></span>
+            <% } else { %>
+              <h1>coming soon</h1>
+            <% } %> 
+          <% }) %>
+        </div>
+    </div>
+</section>
+
+    <p><%= muse.musicTitle %> </p>
+
+<section class="section section-lg bg-default">
+    <div class="container">
+        <div class="row row-75 flex-lg-row-reverse">
+            <div class="col-lg-6 text-center">
+                <div class="box-image-2">
+                    <img src="<%= one.albumAvatar %>" alt="" width="428" height="214"/>
+                </div>
+            </div>
+            <div class="col-lg-6">
+            <h2><%= one.albumTitle %> </h2>
+            <!--Bootstrap tabs-->
+            <div class="tabs-albums" id="tabs-1">
+                <div class="tab-content">
+                <div class="tab-pane fade show active" id="tabs-1-1">
+                    <div class="jp-modern jp-player-init">
+                        <div class="jp-jplayer"></div>
+                        <div class="jp-audio jp-audio-0" role="application" aria-label="media player">
+                            <ul class="jp-player-list">
+                                <% muse.forEach(muse => { %>
+                                    <li class="jp-player-list-item" data-jp-title="<%= muse.musicTitle %>"></li>
+                                <% }) %>
+                            </ul>
+                            <div class="jp-playlist">
+                                <ul class="jp-playlist-inner">
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="jp-modern-footer">
+                                <p style="font-weight: bolder; font-size: 20px;">Follow this album on :-</p>
+                                <ul class="jp-modern-linklist">
+                                    <% if (!one.iTunes) { %>
+                                        
+                                    <% } else { %>
+                                        <li style="padding-top: 3px; font-size: 18px;"><a href="<%= one.iTunes %>"><img src="/images/itunes-21x21.png" alt="" width="25" height="25"/><span>iTunes</span></a></li>
+                                    <% } %> 
+                                    <!-- <li><a href="#"><img src="/images/spotify-19x19.png" alt="" width="19" height="9"/><span>Spotify</span></a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include("../partials/defaultPartials/footer") %>

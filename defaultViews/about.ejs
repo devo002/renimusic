@@ -1,0 +1,44 @@
+<%- include("../partials/defaultPartials/header") %> 
+<%- include("../partials/defaultPartials/navbar") %>
+<%- include("../partials/defaultPartials/breadCrumbs") %>
+          
+    <section class="section section-lg bg-default">
+        <div class="container">
+            <div class="row row-50 flex-md-row-reverse">
+                <div class="col-md-6 text-center">
+                    <!-- <div class="box-image-1"> -->
+                        <img src="/images/bio-01-468x553.jpg" alt="" width="468" height="276"/>
+                    <!-- </div> -->
+                </div>
+                <div class="col-md-6">
+                    <div class="box-about">
+                        <div class="box-about-title-wrap">
+                            <h2 class="box-about-mega-title">Reni</h2>
+                            <h2 class="box-about-title">about me</h2>
+                        </div>
+                        <h4 class="box-about-post-title">How it All Began . . .</h4>
+                        <p>Reni Adebayo-Ige had a humble beginning as an orphan from age seven--her father passed away when she was six months old and her mother when she was seven years old. However, God's hands of love, grace & favor kept her while growing up and continues to keep her today. Raised by her maternal aunt, who had put her in the church choir at a very young age, Reni continued to sing from childhood through adolescence to adulthood.</p>
+                        <p>Today, Reni, a recognized international worship minister, is a psalmist, song writer, and recording artiste with five full albums and four singles on her list of accomplishments. Her album titles are All Things are Possible, I Believe, Testimony, Dependable, and Unconditional Love. At the same time, the singles are El-Shaddai, Grace & Mercy, My Papa, and The King is Coming. Reni has ministered in several cities in North America, Africa, Western and Eastern Europe.</p>
+                        <p>Reni and her husband, Pastor Bernard Adebayo-Ige, P.E., live in Eastvale, CA, from where she continues to minister to the people of God across many church organizations in North America and abroad. She also co-pastor Winners Christian Church in Corona, CA, with her husband. They are blessed with three adult sons.</p>
+                        <p>Reni is the President of Reni Ministries, a 501C3 organization that <a href="https://reniministries.org/educational-scholarships-for-orphans-in-africa/">awards educational scholarships to some African orphans</a>. In addition, for over a decade, Reni hosted an annual interdenominational Christmas Party for children and teens in the Delaware Valley area (Pennsylvania, Southern NJ & Delaware). According to Reni, it was an avenue to showcase their talents, tagged "Catch Them Young for Christ."</p>
+                        <!-- <p>Currently, Reni is about to release a single titled, <em><q>The King is Coming</q></em>.</p> -->
+                        <a class="button button-primary" href="/musics">View My Albums</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-lg-3 bg-default">
+        <div class="owl-carousel owl-carousel-bio" data-items="1" data-sm-items="1" data-md-items="2" data-lg-items="2" data-xl-items="3" data-xxl-items="4" data-autoplay="false" data-nav="true" data-dots="true" data-loop="true" data-mouse-drag="false" data-stage-padding="0" data-margin="0" data-nav-text="[&quot;prev&quot;,&quot;next&quot;]">
+            <% awards.forEach(award => { %>
+                <div class="box-bio">
+                    <div class="box-bio-year"><%= award.date %></div>
+                    <div class="box-bio-body">
+                        <h5 class="box-bio-title"><%= award.title %></h5>
+                        <p class="box-bio-text"><%= award.description %></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+<%- include("../partials/defaultPartials/footer") %>

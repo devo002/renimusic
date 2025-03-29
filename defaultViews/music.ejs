@@ -1,0 +1,75 @@
+<%- include("../partials/defaultPartials/header") %> 
+<%- include("../partials/defaultPartials/navbar") %>
+
+<style>
+  .quotes-text {
+    color: white;
+    font-size: 25px;
+    font-family: cursive;
+  }
+  .quotes-verse {
+    color: white;
+    font-size: 18px;
+    font-family: cursive;
+  }
+</style>
+<!-- Breadcrumbs-->
+<section class="breadcrumbs-custom bg-image context-dark" style="background-image: url('/images/musicDisplay.jpg'); background-position: 50% 20% ;">
+  <div class="container">
+      <div class="page-quotes">
+        <% verse.forEach(quote => { %>
+          <% if (quote) { %>
+            <p class="quotes-text"><%= quote.text %> </p>
+            <span class="quotes-verse"><%= quote.verse %></span>
+          <% } else { %>
+            <h1>coming soon</h1>
+          <% } %> 
+        <% }) %>
+      </div>
+    <h2 class="breadcrumbs-custom-title"> </h2>
+  </div>
+</section>
+
+<section class="section section-xl bg-default text-center">
+  <div class="container">
+    <!-- <h6 class="text-gray-600">from</h6> -->
+    <h2>My Singles</h2>
+    <div class="row row-125">
+      <% single.forEach(single => { %>
+        <div class="col-md-6 col-lg-4">
+          <a href="<%= single.Surl %>" target="_blank" rel="noopener noreferrer">
+            <!-- <article class="post-classic"> -->
+              <figure class="post-classic-figure"><img src="<%= single.img %>" alt="<%= single.name %>" width="35" height="35"/></figure>
+              <div class="post-classic-content">
+                <h5 class="post-classic-title"><a href="<%= single.Surl %>"><%= single.name %> </a></h5>
+              </div>
+            <!-- </article> -->
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+      <section class="section section-xl bg-default text-center">
+        <div class="container">
+          <!-- <h6 class="text-gray-600">from my album</h6> -->
+          <h2>My Albums</h2>
+          <div class="row row-125">
+            <% albums.forEach(album => { %>
+              <div class="col-md-6 col-lg-4">
+                <!-- <a href="/album/<%= album._id %>"> -->
+                  <!-- <article class="post-classic"> -->
+                    <figure class="post-classic-figure"><img src="<%= album.albumAvatar %>" alt="<%= album.albumTitle %>" width="35" height="35"/></figure>
+                    <div class="post-classic-content">
+                      <h5 class="post-classic-title"><%= album.albumTitle %></h5>
+                      <!-- <a href="/album/<%= album._id %> "><%= album.albumTitle %> </a></h5> -->
+                    </div>
+                  <!-- </article> -->
+                <!-- </a> -->
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      </section>
+<%- include("../partials/defaultPartials/footer") %> 

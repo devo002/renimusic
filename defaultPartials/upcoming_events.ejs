@@ -1,0 +1,44 @@
+  <% upcoming.forEach(event => { %>
+    <section class="parallax-container section-lg text-center" data-parallax-img="rgb(34, 45, 79)" style="background-position: center 40%;margin-top:-50px;">
+      <div class="parallax-content" style="margin-top: -20px;">
+        <div class="container">
+          <!-- <h2> upcoming events</h2> -->
+          <div class="row justify-content-center">
+            <div class="col-lg-11">
+              <div class="post-event">
+                  <!-- <img src="<%= event.eventAvatar %>" alt="<%= event.eventTitle %> " width="450" height="85"/>
+                   -->
+                   <section class="section section-lg bg-default text-center">
+                    <div class="container" style="margin-top: 1px;">
+                        <h2>Upcoming Single</h2>
+                          <div class="tabs-custom tabs-vertical tabs-video" id="tabs-2">
+                            <div class="tab-content">
+                                  <img src="<%= event.eventAvatar %>" alt="<%= event.eventTitle %> " width="450" height="85"/> 
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+
+                                <!-- <div class="tab-pane fade show active" id="tabs-2-1">
+                                    <div class="entry-video embed-responsive embed-responsive-16by9">
+                                        <iframe width="953" height="500" src="https://www.youtube.com/embed/6Su3upCPces&t=6s?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    -->
+        
+        
+                   
+
+                   
+                 <!-- <a class="button button-primary button-lg" href="#"><%= event.eventDate.getFullYear() %>-<%= event.eventDate.getMonth() + 1 %>-<%= event.eventDate.getDate() %></a> -->
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    </section>
+  <% }) %>

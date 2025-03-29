@@ -1,0 +1,29 @@
+<style>
+  .quotes-text {
+    /*color: blue;*/
+    font-size: 25px;
+    color: white;
+    font-family: cursive;
+  }
+  .quotes-verse {
+    /*color: blue;*/
+    color: white;
+    font-size: 18px;
+    font-family: cursive;
+  }
+</style>
+<!-- Breadcrumbs-->
+<section class="breadcrumbs-custom bg-image context-dark" style="background-image: url('<%= img %>'); background-position: 10% 23%;">
+    <div class="container">
+        <div class="page-quotes">
+          <% verse.forEach(quote => { %>
+            <% if (quote) { %>
+              <p class="quotes-text"><%= quote.text %> </p>
+              <span class="quotes-verse"><%= quote.verse %></span>
+            <% } else { %>
+              <h1>coming soon</h1>
+            <% } %> 
+          <% }) %>
+        </div>
+    </div>
+  </section>
